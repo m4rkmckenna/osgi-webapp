@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ie.markmckenna</groupId>
+    <artifactId>sample-osgi-webapp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Sample OSGi Webapp</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>war-example</module>
+        <module>whiteboard-example</module>
+    </modules>
+
+    <properties>
+        <maven-bundle-plugin.version>3.0.1</maven-bundle-plugin.version>
+        <build-helper-maven-plugin.version>1.10</build-helper-maven-plugin.version>
+        <servlet-api.version>2.5</servlet-api.version>
+        <slf4j.version>1.7.14</slf4j.version>
+        <osgi.core.version>6.0.0</osgi.core.version>
+        <frontend-maven-plugin.version>0.0.28</frontend-maven-plugin.version>
+        <karaf.version>4.0.3</karaf.version>
+        <javax.ws.rs-api.version>2.0.1</javax.ws.rs-api.version>
+        <node.version>v0.12.7</node.version>
+        <npm.version>2.14.7</npm.version>
+        <pax-web-extender-whiteboard.version>4.2.3</pax-web-extender-whiteboard.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>${maven-bundle-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.karaf.tooling</groupId>
+                    <artifactId>karaf-maven-plugin</artifactId>
+                    <version>${karaf.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${build-helper-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.eirslett</groupId>
+                    <artifactId>frontend-maven-plugin</artifactId>
+                    <version>${frontend-maven-plugin.version}</version>
+                </plugin>
+            </plugins>
+
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
